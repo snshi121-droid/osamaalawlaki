@@ -1,0 +1,279 @@
+:root {
+  --primary: #1f5a7a;
+  --primary-dark: #143d54;
+  --primary-soft: #e6eff4;
+  --ink: #12222c;
+  --paper: #f6f9fb;
+  --sand: #f7ecda;
+  --gold: #d9b24c;
+  --radius: 18px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
+}
+
+body {
+  font-family: "Cairo", system-ui, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.8;
+}
+
+a { color: inherit; text-decoration: none; }
+
+:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* ---------- الشريط العلوي ---------- */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 6vw;
+  background: rgba(246, 249, 251, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #dbe6ec;
+}
+
+.brand {
+  font-weight: 900;
+  font-size: 1.3rem;
+  color: var(--primary);
+}
+
+.topbar nav {
+  display: flex;
+  gap: 22px;
+  font-weight: 600;
+}
+
+.topbar nav a:hover { color: var(--primary); }
+
+/* ---------- الترحيب ---------- */
+.hero {
+  min-height: 82vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 6vw;
+  background: var(--primary);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset-inline-start: -8vw;
+  bottom: -18vw;
+  width: 46vw;
+  height: 46vw;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+  box-shadow: 0 0 0 28px rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+
+.hero-hello {
+  font-size: 1.3rem;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.hero-name {
+  font-size: clamp(5rem, 22vw, 13rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-block: 4px 10px;
+}
+
+.hero-sub {
+  font-size: clamp(1.05rem, 3.4vw, 1.5rem);
+  max-width: 28ch;
+  margin-bottom: 28px;
+  opacity: 0.92;
+}
+
+/* ---------- الأزرار ---------- */
+.btn {
+  display: inline-block;
+  padding: 11px 28px;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--primary);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: translateY(0); }
+
+.btn-ghost {
+  background: transparent;
+  border-color: var(--primary);
+}
+
+.btn-ghost:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn-light { background: #fff; color: var(--primary); }
+
+/* ---------- الأعمال ---------- */
+.works {
+  padding: 80px 6vw;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  font-weight: 900;
+  color: var(--primary);
+  margin-bottom: 32px;
+}
+
+.section-title.light { color: #fff; }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 26px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #dbe6ec;
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+}
+
+.card-media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: var(--primary-soft);
+}
+
+.card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.logo-media { background: var(--sand); }
+.logo-media img { object-fit: contain; padding: 6px; }
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 20px 22px 24px;
+  flex: 1;
+}
+
+.card-body h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.card-body p { color: #3d525e; }
+
+.card-body .btn { margin-top: auto; }
+
+/* البيت فوق صورة الشعر */
+.verse {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14% 12%;
+  text-align: center;
+  color: #fff;
+  font-size: clamp(1.05rem, 3.6vw, 1.3rem);
+  font-weight: 600;
+  line-height: 2.1;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+  transition: opacity 0.25s ease;
+}
+
+.verse.fade { opacity: 0; }
+
+/* ---------- التواصل ---------- */
+.contact {
+  padding: 80px 6vw;
+  background: var(--primary-dark);
+  color: #fff;
+}
+
+.contact-text {
+  max-width: 34ch;
+  margin-bottom: 24px;
+  opacity: 0.9;
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px 26px;
+}
+
+.phone {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.phone:hover { color: var(--gold); }
+
+/* ---------- الفوتر ---------- */
+.footer {
+  padding: 18px 6vw;
+  background: var(--ink);
+  color: #b9c8d1;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* ---------- الجوال ---------- */
+@media (max-width: 600px) {
+  .topbar nav { gap: 14px; }
+  .hero { min-height: 74vh; }
+  .works, .contact { padding-block: 60px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}

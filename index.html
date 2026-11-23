@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أسامه | معرض أعمالي</title>
+  <meta name="description" content="معرض أعمال أسامه: الشعر والخط ومتجر العتيق.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <a href="#hero" class="brand">أسامه</a>
+    <nav>
+      <a href="#works">أعمالي</a>
+      <a href="#contact">تواصل</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- الترحيب -->
+    <section id="hero" class="hero">
+      <p class="hero-hello">أهلاً وسهلاً، أنا</p>
+      <h1 class="hero-name">أسامه</h1>
+      <p class="hero-sub">أكتب الشعر، وأرسم الحروف، وأبني مشاريعي بيدي.</p>
+      <a href="#works" class="btn">شوف أعمالي</a>
+    </section>
+
+    <!-- الأعمال -->
+    <section id="works" class="works">
+      <h2 class="section-title">أعمالي</h2>
+
+      <div class="cards">
+
+        <!-- بطاقة الشعر -->
+        <article class="card">
+          <div class="card-media poetry-media">
+            <img src="images/poetry.svg" alt="خلفية فيها أبيات شعر" loading="lazy">
+            <p class="verse" id="verse" aria-live="polite"></p>
+          </div>
+          <div class="card-body">
+            <h3>الشعر</h3>
+            <p>أبيات من كتابتي، تتغير كل ما ضغطت الزر.</p>
+            <button class="btn btn-ghost" id="verseBtn" type="button">بيت ثاني</button>
+          </div>
+        </article>
+
+        <!-- بطاقة الخط -->
+        <article class="card">
+          <div class="card-media">
+            <img src="images/pen.svg" alt="قلم حبر" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3>الخط</h3>
+            <p>الحرف العربي له هيبة، وأنا أتعلمه وأرسمه بالقلم.</p>
+          </div>
+        </article>
+
+        <!-- بطاقة متجر العتيق -->
+        <article class="card">
+          <div class="card-media logo-media">
+            <img src="images/ateeq-logo.png" alt="شعار شاورما العتيق" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3>متجر العتيق</h3>
+            <p>هوية وشعار «شاورما العتيق»، بألوان دافئة وقوس يشبه المداخل القديمة.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- التواصل -->
+    <section id="contact" class="contact">
+      <h2 class="section-title light">تواصل معي</h2>
+      <p class="contact-text">للتعاون أو الطلبات، كلمني على واتساب أو اتصال.</p>
+      <div class="contact-actions">
+        <a class="btn btn-light" href="https://wa.me/966578699472" target="_blank" rel="noopener">واتساب</a>
+        <a class="phone" href="tel:+966578699472" dir="ltr">+966 578 699 472</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> أسامه. جميع الحقوق محفوظة.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
